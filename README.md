@@ -1,7 +1,7 @@
 
 # Restaurant Statistics Web Application
 
-This project is a technical test to develop a web application for displaying restaurant reservation statistics. The application is designed to manage and visualize data efficiently using a structured tech stack.
+This project is a technical test to develop a web application for displaying restaurant statistics. The application is designed to manage and visualize data efficiently using a structured tech stack.
 
 ## Features
 - View daily and total reservation statistics for a specific restaurant.
@@ -27,7 +27,7 @@ This project is a technical test to develop a web application for displaying res
    ```
 3. Start the server:
    ```bash
-   npm start
+   node index.js
    ```
 
 ### Frontend
