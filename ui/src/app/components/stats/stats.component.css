@@ -1,0 +1,178 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  color: white;
+}
+.restaurantImage{
+  width: 300px;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+}
+.restaurantStatsTitle{
+  padding-bottom: 1rem;
+}
+.restaurantTitle {
+  align-items: center;
+  margin: auto;
+  padding: 1rem 0 1rem 0;
+}
+.tableVertical{
+  display:none;
+}
+.tableHorizontal{
+  display:block;
+}
+.selectedRestaurantId {
+  color: #d32f2f;
+}
+
+.tableTitle {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+.restaurantSelectorCard {
+  padding: 20px;
+}
+
+.restaurantOption {
+  color: white;
+}
+
+.restaurantSelector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.restaurantLabel {
+  font-weight: bold;
+}
+
+.restaurantSelectField {
+  min-width: 200px;
+}
+
+.statsCard {
+  padding: 20px;
+  text-align: center;
+}
+
+.statsTable {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 3rem;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.tableSection {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.canvas {
+  max-width: 300px;
+  max-height: 300px;
+  padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+
+}
+
+.statsTable table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.statsTable th,
+.statsTable td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.statsTable th {
+  font-weight: bold;
+}
+
+.bodyTable {
+  overflow-x: auto;
+}
+
+.errorCard {
+  color: #d32f2f;
+  background-color: #ffebee;
+  padding: 20px;
+}
+
+/* Media Queries para responsive design */
+@media (max-width: 1300px) {
+  .container {
+      padding: 10px;
+  }
+  .tableVertical{
+    display:block;
+  }
+  .tableHorizontal{
+    display:none;
+  }
+  .restaurantSelector {
+      flex-direction: column;
+      gap: 15px;
+  }
+
+  .restaurantSelectField {
+      min-width: 150px;
+  }
+
+  .statsTable {
+      flex-direction: column;
+      gap: 1.5rem;
+  }
+
+  .statsTable table {
+      width: 100%;
+      margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .restaurantTitle {
+      font-size: 1.2rem;
+  }
+  
+  .statsCard {
+      padding: 10px;
+  }
+
+  .restaurantSelectorCard {
+      padding: 10px;
+  }
+
+  .restaurantLabel {
+      font-size: 0.9rem;
+  }
+
+  .restaurantSelectField {
+      min-width: 130px;
+  }
+
+  .statsTable {
+      gap: 1rem;
+  }
+
+  .canvas {
+      max-width: 100%;
+      max-height: 300px;
+  }
+}

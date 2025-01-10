@@ -1,0 +1,104 @@
+<div class="container">
+  <mat-card class="restaurantSelectorCard">
+    <img src="asisto_logo_small.png" alt="Restaurant logo" class="restaurantImage" />
+    <mat-card-title class="restaurantTitle">Select a restaurant</mat-card-title>
+    <div class="restaurantSelector">
+      <span class="restaurantLabel">Restaurant:</span>
+      <mat-form-field appearance="outline" class="restaurantSelectField">
+        <mat-label>Select a restaurant</mat-label>
+        <mat-select (selectionChange)="onSelectRestaurant($event)">
+          <mat-option class="restaurantOption" value="">None</mat-option>
+          <mat-option class="restaurantOption" *ngFor="let restaurant of restaurants" [value]="restaurant">
+            {{ restaurant }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </mat-card>
+
+  <mat-card *ngIf="statsDaily!.length > 0" class="statsCard">
+    <mat-card-title class="restaurantStatsTitle">
+      <h3>Restaurant stats: <a class="selectedRestaurantId">{{ selectedRestaurantId }}</a></h3>
+    </mat-card-title>
+    <div class="statsTable">
+      <div class="tableSection tableHorizontal">
+        <div><h2 class="tableTitle">Per day</h2></div>
+        <table>
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th *ngFor="let stat of statsDaily">{{ stat.day_of_week }}</th>
+            </tr>
+          </thead>
+          <tbody class="bodyTable">
+            <tr>
+              <td>People per day</td>
+              <td *ngFor="let stat of statsDaily">{{ stat.total_people }}</td>
+            </tr>
+            <tr>
+              <td>Reservations per day</td>
+              <td *ngFor="let stat of statsDaily">{{ stat.total_reservations }}</td>
+            </tr>
+            <tr>
+              <td>Average Stay Time</td>
+              <td *ngFor="let stat of statsDaily">{{ stat.average_stay_time }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tableSection tableVertical">
+        <div><h2 class="tableTitle">Per day</h2></div>
+        <table>
+          <thead>
+            <tr>
+              <th>Day of Week</th>
+              <th>Total People</th>
+              <th>Total Reservations</th>
+              <th>Average Stay Time</th>
+            </tr>
+          </thead>
+          <tbody class="bodyTable">
+            <tr *ngFor="let stat of statsDaily">
+              <td>{{ stat.day_of_week }}</td>
+              <td>{{ stat.total_people }}</td>
+              <td>{{ stat.total_reservations }}</td>
+              <td>{{ stat.average_stay_time }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="tableSection">
+        <div><h2 class="tableTitle">Total</h2></div>
+        <table>
+          <tbody>
+            <tr>
+              <td>Online Reservations</td>
+              <td *ngFor="let stat of statsTotal">{{ stat.total_online }}</td>
+            </tr>
+            <tr>
+              <td>Manual Reservations</td>
+              <td *ngFor="let stat of statsTotal">{{ stat.total_manual }}</td>
+            </tr>
+            <tr>
+              <td>Average Stay Time</td>
+              <td *ngFor="let stat of statsTotal">{{ stat.average_stay_time }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tableSection">
+        <mat-card-title><h2 class="tableTitle">Reservation Stats</h2></mat-card-title>
+        <div class="canvas"><canvas id="myChart"></canvas></div>
+      </div>
+    </div>
+  </mat-card>
+
+  <mat-progress-spinner *ngIf="loading" mode="indeterminate" color="accent"></mat-progress-spinner>
+
+  <mat-card *ngIf="error" class="errorCard">
+    <mat-card-title>Error</mat-card-title>
+    <mat-card-content>{{ error }}</mat-card-content>
+  </mat-card>
+</div>
