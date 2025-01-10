@@ -2,6 +2,7 @@
 # Restaurant Statistics Web Application
 
 This project is a technical test to develop a web application for displaying restaurant statistics. The application is designed to manage and visualize data efficiently using a structured tech stack.
+![Untitled](https://github.com/user-attachments/assets/57a2bf21-0d15-4460-9e33-ece6b6d28a7a)
 
 ## Features
 - View daily and total reservation statistics for a specific restaurant.
